@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Explore | 🧶yarnea</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  background:#f6f7f6;
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(to right,#4b2c20,#2f6b3f);
+  color:#fff;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:70px 20px 40px;
+  background:linear-gradient(to bottom,#fff,#eef3ef);
+}
+
+.hero h1{
+  font-size:40px;
+  color:#2f6b3f;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+  color:#555;
+}
+
+/* STORIES */
+.stories{
+  display:flex;
+  gap:18px;
+  padding:20px;
+  overflow-x:auto;
+  max-width:1100px;
+  margin:20px auto 50px;
+}
+
+.story{
+  text-align:center;
+  cursor:pointer;
+}
+
+.story img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #e1306c;
+  padding:3px;
+  transition:0.3s;
+}
+
+.story:hover img{
+  transform:scale(1.12);
+}
+
+.story span{
+  display:block;
+  margin-top:6px;
+  font-size:14px;
+}
+
+/* INFO CARDS */
+.info{
+  max-width:1000px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  padding:0 20px;
+}
+
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#2f6b3f;
+}
+
+/* CONTACT */
+.contact{
+  background:#fff;
+  margin:80px auto;
+  max-width:900px;
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+.contact h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#2f6b3f;
+}
+
+.contact p{
+  text-align:center;
+  margin:10px 0;
+}
+
+/* STORY MODAL */
+.story-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.story-modal img{
+  max-width:90%;
+  max-height:85vh;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.story-modal span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:34px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#2f6b3f;
+  color:#fff;
+  margin-top:70px;
+}
+
+.explore-scroll {
+  overflow-x: hidden;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🧶 Yarnea</h2>
+  <nav>
+    <a href="index.html">🏚️Home</a>
+   <a href="products.html">👜shop</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Explore Crochet World</h1>
+  <p>Stories, creativity & handmade beauty ✨</p>
+</section>
+
+<!-- INSTAGRAM STYLE STORIES -->
+<div class="stories">
+  <div class="story" onclick="openStory('images/Bow Mesh Bag.jpg')">
+    <img src="images/Bow Mesh Bag.jpg">
+    <span>Bag</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/sunflower.jpg')">
+    <img src="images/sunflower.jpg">
+    <span>Sunflower</span>
+  </div>
+
+   <div class="story" onclick="openStory('images/Luffy.jpg')">
+    <img src="images/Luffy.jpg">
+    <span>Luffy</span>
+  </div>
+
+ <div class="story" onclick="openStory('images/flowervase.jpg')">
+    <img src="images/flowervase.jpg">
+    <span>Flower vase</span>
+  </div>
+
+
+  <div class="story" onclick="openStory('images/spiderman.jpg')">
+    <img src="images/spiderman.jpg">
+    <span>Spiderman</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/flowerpot.jpg')">
+    <img src="images/flowerpot.jpg">
+    <span>Flower Pot</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/Panda Keychain.jpg')">
+    <img src="images/Panda Keychain.jpg">
+    <span>Panda</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/Spiderman Beanie.jpg')">
+    <img src="images/Spiderman Beanie.jpg">
+    <span>Beanie</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/cherry.jpg')">
+    <img src="images/cherry.jpg">
+    <span>Cherry</span>
+  </div>
+
+  <div class="story" onclick="openStory('images/Tulip Flower Pot.jpg')">
+    <img src="images/Tulip Flower Pot.jpg">
+    <span>Tulip</span>
+  </div>
+</div>
+
+<section class="info">
+  <div class="card">
+    <h3>What is Crochet?</h3>
+    <p>Handcrafted yarn art made with patience, love & creativity.</p>
+  </div>
+
+  <div class="card">
+    <h3>Why Handmade Matters ❤️</h3>
+    <p>Supports sustainability, uniqueness & small creators.</p>
+  </div>
+
+  <div class="card">
+    <h3>Our Promise</h3>
+    <p>Premium quality, unique designs & customer happiness.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact & Creator</h2>
+  <p><strong>Name:</strong> Mazroora & Faizaan </p>
+  <p><strong>Phone:</strong> +91 8590033956</p>
+  <p><strong>Email:</strong> yarnea47@gmail.com</p>
+</section>
+
+<footer>
+  © 2026 yarnea | Handmade with ❤️
+</footer>
+
+<!-- STORY MODAL -->
+<div class="story-modal" id="storyModal">
+  <span onclick="closeStory()">×</span>
+  <img id="storyImg">
+</div>
+
+<script>
+function openStory(src){
+  document.getElementById("storyModal").style.display="flex";
+  document.getElementById("storyImg").src = src;
+}
+
+function closeStory(){
+  document.getElementById("storyModal").style.display="none";
+}
+</script>
+
+</body>
+</html>

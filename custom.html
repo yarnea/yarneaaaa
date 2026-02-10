@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom Crochet Order | Yarnea</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAVBAR (reuse your existing navbar HTML) -->
+  <header class="navbar">
+    <div class="logo">🧶 yarnea</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+    </nav>
+  </header>
+
+  <!-- CUSTOM ORDER SECTION -->
+  <section class="custom-order">
+    <h1>Request a Custom Crochet Order 🧵</h1>
+    <p>
+      Looking for something unique?  
+      Tell us your idea and we’ll bring it to life 💚
+    </p>
+
+    <form id="customForm">
+      <input type="text" id="productType" placeholder="Product type (Bag, Doll, Keychain…)" required />
+
+      <input type="text" id="color" placeholder="Preferred color(s)" />
+
+      <input type="text" id="size" placeholder="Size / Dimensions (optional)" />
+
+      <input type="number" id="quantity" placeholder="Quantity" />
+
+      <input type="date" id="deadline" />
+
+      <textarea id="notes" rows="4"
+        placeholder="Any reference, theme, or special instructions"></textarea>
+
+      <button type="submit">Send Request on WhatsApp</button>
+    </form>
+
+    <small>
+      *Customization prices may vary based on design complexity and materials.
+    </small>
+  </section>
+
+  <script src="custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #2c2c2c;
+
+  /* soft modern handmade background */
+  background:
+    radial-gradient(circle at top left, #f3fbf6 0%, transparent 40%),
+    radial-gradient(circle at bottom right, #eef7f1 0%, transparent 45%),
+    linear-gradient(180deg, #f8fcfa 0%, #ffffff 60%);
+
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 18px 42px;
+  background: linear-gradient(90deg, #4b2c20, #2f6b3f);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+header h1 {
+  font-size: 26px;
+  color: #fff;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+nav a,
+nav span {
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.icon-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 60px;
+  background: linear-gradient(180deg, #ffffff, #eef3ef);
+}
+
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: #2f6b3f;
+}
+
+.hero-content p {
+  margin-top: 18px;
+  font-size: 18px;
+  color: #555;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+}
+
+.hero-btn {
+  padding: 14px 28px;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-btn.primary {
+  background: linear-gradient(135deg, #2f8f46, #2ecc71);
+  color: white;
+  box-shadow: 0 10px 25px rgba(46, 204, 113, 0.45);
+}
+
+.hero-btn.secondary {
+  background: white;
+  color: #2f6b3f;
+  border: 2px solid #2f6b3f;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 26px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* ================= PRODUCTS ================= */
+.products {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #fff;
+  border-radius: 26px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.price {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2f8f46;
+}
+
+/* ================= BUTTONS ================= */
+.btns {
+  display: flex;
+  gap: 14px;
+  margin-top: auto;          /* pushes buttons to bottom */
+  padding-top: 12px;
+}
+
+.add {
+  background: linear-gradient(135deg, #6a4332, #8b5a42);
+  color: #fff;
+ box-shadow: 0 6px 16px rgba(106, 67, 50, 0.35);
+}
+
+.add:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 20px rgba(150, 90, 60, 0.85);
+}
+
+
+.buy {
+  background: linear-gradient(135deg, #28a745, #2ecc71);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(46, 204, 113, 0.45);
+}
+
+.buy:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 22px rgba(46, 255, 140, 0.9);
+}
+
+.add:active,
+.buy:active {
+  transform: scale(0.96);
+}
+.add:active,
+.buy:active {
+  transform: scale(0.96);
+}
+.add,
+.buy {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease; 
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= MINI CART ================= */
+.mini-cart {
+  position: fixed;
+  top: 90px;
+  right: -350px;
+  width: 320px;
+  background: #fff;
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  transition: 0.4s ease;
+}
+
+.mini-cart.show {
+  right: 25px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.remove-btn {
+  width: 20px;
+  height: 20px;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff8a00, #ffb347);
+  color: white;
+  font-weight: 700;
+  border: none;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #0f172a;
+  color: #eee;
+}
+
+body.dark .card,
+body.dark .mini-cart {
+  background: #1f1f1f;
+}
+
+body.dark header {
+  background: linear-gradient(90deg, #111, #064420);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 25px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .products {
+    padding: 40px 20px;
+  }
+}
+
+/* HERO FULL PAGE HEIGHT */
+.hero-full {
+  min-height: calc(100vh - 90px);
+}
+
+/* PRODUCTS PAGE SPACING */
+.products-page {
+  padding-top: 50px;
+}
+
+.hero-image.slider {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.hero-image.slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-image.slider img.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================================
+   FIX PRODUCT CARD SIZE
+================================ */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;              /* bigger banner */
+  object-fit: cover;
+  border-radius: 18px;        /* smooth rounded corners */
+  margin-bottom: 12px;
+}
+
+.card .btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* ================================
+   NAVBAR CART BUTTON FIX
+================================ */
+
+#cartBtn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#cartBtn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+
+.card .btns {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.card .add,
+.card .buy {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;        /* pill shape */
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Add to Cart */
+.card .add {
+  background: linear-gradient(135deg, #7a4a2e, #5c3623);
+  color: #fff;
+}
+
+.card .add:hover {
+  background: linear-gradient(135deg, #8b5638, #6a3f29);
+  transform: translateY(-2px);
+}
+
+/* Buy */
+.card .buy {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+}
+
+.hero-image {
+  position: relative;
+  width: 420px;
+  height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.hero-image img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+/* =========================
+   BRAND LOGO – YARNEA
+========================= */
+.brand,
+.logo,
+.site-title {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Subtle handmade feel */
+.brand span,
+.logo span {
+  font-weight: 800;
+}
+
+/* Dark mode polish */
+body.dark .brand,
+body.dark .logo,
+body.dark .site-title {
+  color: #f9fafb;
+}
+
+/* ===============================
+   MINI CART – SLIDE ANIMATION
+================================ */
+
+.mini-cart {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 280px;
+
+  background: #ffffff;
+  color: #111827;
+
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+
+  /* 🔥 SLIDE SETUP */
+  transform: translateX(120%);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 
+    transform 0.35s ease,
+    opacity 0.25s ease;
+  z-index: 2000;
+}
+
+/* WHEN CART IS OPEN */
+.mini-cart.show {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Cart text safety */
+.mini-cart * {
+  opacity: 1;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+
+body.dark .mini-cart {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+
+/* ======================================
+   DARK MODE – CART VISIBILITY FIX
+====================================== */
+
+/* Remove fading from page layers */
+body.dark main,
+body.dark .products,
+body.dark .page,
+body.dark .container {
+  opacity: 1;
+  filter: none;
+}
+
+/* Ensure cart floats ABOVE dark overlay */
+body.dark .mini-cart {
+  background: #1f2937 !important;
+  color: #f9fafb !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  isolation: isolate;   /* 🔥 KEY LINE */
+}
+
+/* Force cart text solid */
+body.dark .mini-cart *,
+body.dark .mini-cart h3,
+body.dark .mini-cart p,
+body.dark .cart-item span {
+  color: #f9fafb !important;
+  opacity: 1 !important;
+}
+
+
+.custom-order {
+  max-width: 600px;
+  margin: 80px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.custom-order h1 {
+  color: #2f6f3e;
+  margin-bottom: 10px;
+}
+
+.custom-order p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.custom-order input,
+.custom-order textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.custom-order button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-order button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(46,204,113,0.4);
+}
+
+.custom-order small {
+  display: block;
+  margin-top: 15px;
+  color: #777;
+}
+
+/* ===============================
+   NAVBAR – CUSTOMISE HIGHLIGHT (RED)
+================================ */
+
+nav a[href*="custom"] {
+  background: linear-gradient(135deg, #ff3b3b, #d60000);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 22px;
+  font-weight: 600;
+  position: relative;
+  box-shadow: 0 0 0 rgba(255, 59, 59, 0.7);
+  animation: customiseGlowRed 2.5s infinite;
+}
+
+/* Red glow animation */
+@keyframes customiseGlowRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 22px 9px rgba(255, 59, 59, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 59, 59, 0);
+  }
+}
+
+/* Hover effect */
+nav a[href*="custom"]:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(255, 59, 59, 0.55);
+}
+
+
+body.dark nav a[href*="custom"] {
+  background: linear-gradient(135deg, #ff9f1a, #ff7a00);
+}
+

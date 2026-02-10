@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products | Yarnea</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">🧶 yarnea</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="custom.html">Customise</a>
+
+    <button id="cartBtn" onclick="toggleCart()">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+
+   <button id="darkBtn" class="icon-btn" onclick="toggleDark(event)">
+  🌙
+</button>
+
+  </nav>
+</header>
+
+<!-- MINI CART -->
+<div id="miniCart" class="mini-cart">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <p>Total: ₹<span id="cartTotal">0</span></p>
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div id="products" class="products-grid"></div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script src="products.js"></script>
+</body>
+</html>
