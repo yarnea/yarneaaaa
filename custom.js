@@ -28,6 +28,7 @@ ${notes || "None"}
 Please let me know the feasibility, pricing, and timeline.
 Thank you.`;
 
-  const url = `https://wa.me/${8590033956}?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/${918590033956}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
+
