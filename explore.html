@@ -6,6 +6,7 @@
 <title>Explore | 🧶yarnea</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -176,6 +177,113 @@ footer{
   overflow-x: hidden;
 }
 
+@keyframes pulseGlow {
+  0%,100% { opacity: .6 }
+  50% { opacity: 1 }
+}
+
+@keyframes softFade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+body {
+  animation: softFade .5s ease-in;
+}
+
+<style>
+/* =========================
+   PLAYFUL CREATOR POP CARD
+========================= */
+
+.creator-pop {
+  width: 90%;
+  max-width: 700px;
+  margin: 100px auto;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #e8fff1, #fff);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* closed view */
+.creator-closed {
+  padding: 40px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2f6b3f;
+}
+
+.tap-hint {
+  display: block;
+  margin-top: 10px;
+  font-size: 2rem;
+  opacity: 0.6;
+  cursor:pointer;
+}
+
+/* open view */
+.creator-open {
+  padding: 50px 40px;
+  text-align: center;
+  display: none;
+  animation: popIn 0.5s ease forwards;
+}
+
+.creator-open h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.creator-open p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.creator-info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+/* ACTIVE STATE */
+.creator-pop.active {
+  transform: scale(1.05) rotate(-1deg);
+  background: linear-gradient(135deg, #d7ffe8, #ffffff);
+}
+
+.creator-pop.active .creator-closed {
+  display: none;
+}
+
+.creator-pop.active .creator-open {
+  display: block;
+}
+
+/* fun bounce */
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* DARK MODE */
+body.dark .creator-pop {
+  background: linear-gradient(135deg, #1d2e24, #0f1713);
+  color: #dfffe9;
+}
+
+body.dark .creator-closed {
+  color: #7be6a6;
+}
+</style>
+
+
 </style>
 </head>
 
@@ -265,12 +373,22 @@ footer{
   </div>
 </section>
 
-<section class="contact">
-  <h2>Contact & Creator</h2>
-  <p><strong>Name:</strong> Mazroora & Faizaan </p>
-  <p><strong>Phone:</strong> +91 8590033956</p>
-  <p><strong>Email:</strong> yarnea47@gmail.com</p>
-</section>
+<div class="creator-pop" id="creatorPop">
+  <div class="creator-closed">
+     Meet the Creators
+    <span class="tap-hint">Tap✨</span>
+  </div>
+
+  <div class="creator-open">
+    <h2>Hi! We’re Mazroora & Faizaan 💚</h2>
+    <p>We handcraft crochet pieces with love, patience & creativity.</p>
+
+    <div class="creator-info">
+      <span>📞 +91 8590033956</span>
+      <span>📧 yarnea47@gmail.com</span>
+    </div>
+  </div>
+</div>
 
 <footer>
   © 2026 yarnea | Handmade with ❤️
@@ -291,6 +409,16 @@ function openStory(src){
 function closeStory(){
   document.getElementById("storyModal").style.display="none";
 }
+
+
+const creator = document.getElementById("creatorPop");
+
+creator.addEventListener("click", () => {
+  creator.classList.toggle("active");
+});
+
+
+
 </script>
 
 </body>
