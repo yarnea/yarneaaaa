@@ -28,7 +28,9 @@ body {
     radial-gradient(circle at bottom right, #eef7f1 0%, transparent 45%),
     linear-gradient(180deg, #f8fcfa 0%, #ffffff 60%);
 
-  min-height: 100vh;
+min-height: 100svh;
+height: auto;
+
 }
 
 /* ================= HEADER ================= */
@@ -802,5 +804,32 @@ body.dark .product-card {
 
 body {
   animation: softFade .5s ease-in;
+}
+
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container,
+  .section,
+  .content {
+    width: 100%;
+    padding: 16px;
+  }
+
+  footer {
+    margin-bottom: 0;
+  }
 }
 
